@@ -1,0 +1,57 @@
+.sidebar {
+    z-index: 10;
+    padding: 16px;
+    background: #3531FF;
+    color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 250px;
+    transform: translateX(-200%);
+    width: 0px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.expanded {
+    transform: translateX(0%);
+    width: 100%;
+}
+
+.sidebar .hamb-menu {
+    cursor: pointer;
+    color: #3531FF;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .hamb-menu:hover {
+    transform: rotate(0.25turn);
+}
+
+.sidebar .hamb-menu:active {
+    transform: scale(90%) rotate(0.25turn);
+}
+
+.sidebar.expanded .hamb-menu {
+    color: white;
+}
+
+.sidebar h3 {
+    margin-top: 36px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar h3:hover {
+    transform: translateX(5%);
+}
+
+.sidebar h3:first-of-type {
+    margin-top: 72px;
+}
+
+.sidebar h3:last-of-type {
+    position: absolute;
+    bottom: 16px;
+}

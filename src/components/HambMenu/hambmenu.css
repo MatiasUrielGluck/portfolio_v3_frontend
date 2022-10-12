@@ -1,0 +1,21 @@
+.content-hamb-menu {
+    cursor: pointer;
+    color: #3531FF;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.content-hamb-menu:hover {
+    color: #3172ff;
+}
+
+.content-hamb-menu:active {
+    transform: scale(90%);
+}
+
+.content-hamb-menu .hamb-hidden {
+    opacity: 0;
+}
