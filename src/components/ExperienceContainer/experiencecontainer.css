@@ -1,0 +1,38 @@
+.experience-container h2 {
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.experience-container p:first-of-type {
+    color: black;
+    font-weight: 600;
+}
+
+.experience-container ul {
+    margin-top: 36px;
+    font-size: 1.125rem;
+}
+
+.experience-container li {
+    margin-top: 48px;
+}
+
+.experience-container .contact-btn {
+    width: fit-content;
+    margin-top: 48px !important;
+    background: var(--color-primary);
+    padding: 16px 24px;
+    border-radius: 16px;
+    margin: auto;
+}
+
+.experience-container a {
+    color: white;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 960px) {
+    .experience-container {
+        grid-column: 1 / 3;
+    }
+}

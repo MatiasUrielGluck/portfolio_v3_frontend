@@ -1,7 +1,14 @@
-import { HambMenu, ProfileContainer, SkillsContainer, EducationContainer } from "../";
+import {
+  HambMenu,
+  ProfileContainer,
+  SkillsContainer,
+  EducationContainer,
+  ExperienceContainer,
+  HobbiesContainer,
+} from "../";
 import "./content.css";
 
-import { frontSkillList, backSkillList } from '../../data/tempSkills' // *1 TEMP
+import { frontSkillList, backSkillList } from "../../data/tempSkills"; // *1 TEMP TODO
 
 export const Content = () => {
   return (
@@ -9,15 +16,14 @@ export const Content = () => {
       <HambMenu />
       <ProfileContainer />
       <div className="grid-container">
-        <SkillsContainer skillsCategory="Frontend" skillList={frontSkillList}/> {/* TODO: 1* */}
-        <SkillsContainer skillsCategory="Backend" skillList={backSkillList}/> {/* TODO: 1* */}
+        {/* TODO */}
+        <SkillsContainer skillsCategory="Frontend" skillList={frontSkillList} />{" "}
+        <SkillsContainer skillsCategory="Backend" skillList={backSkillList} />{" "}
+        {/* ---- */}
         
         <EducationContainer />
-
-        {/* HobbiesContainer */}
-
-        {/* ExperienceContainer */}
-
+        <ExperienceContainer />
+        <HobbiesContainer />
       </div>
       {/* Portfolio */}
 

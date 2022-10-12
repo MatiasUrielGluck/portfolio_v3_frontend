@@ -3,6 +3,8 @@
 
 :root {
     --color-title: #4F4F4F;
+    --color-p: #828282;
+    --color-primary: #3531FF;
 }
 
 * {
@@ -20,7 +22,7 @@ body {
 
 p {
     font-weight: 500;
-    color: #828282;
+    color: var(--color-p);
     font-size: 18px;
 }
 

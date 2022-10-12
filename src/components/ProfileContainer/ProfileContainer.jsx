@@ -4,7 +4,7 @@ export const ProfileContainer = () => {
   return (
     <div className="profile-container container">
       <div className="image-container">
-        <img src="/static/images/perfil.jpg" alt="" />
+        <img src="/static/images/perfil.jpg" alt="Matías Uriel Gluck" />
       </div>
       <div className="text-container">
         <div className="info-container">
