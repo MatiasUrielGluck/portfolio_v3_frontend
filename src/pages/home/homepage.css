@@ -1,4 +1,6 @@
 .homepage {
     display: flex;
     flex-flow: row nowrap;
+    height: 100vh;
+    overflow: auto;
 }

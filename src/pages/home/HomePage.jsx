@@ -1,5 +1,5 @@
 import { Content } from "../../components/Content/Content";
-import { Sidebar } from "../../components/Sidebar/Sidebar";
+import { Sidebar } from "../../components";
 
 import "./homepage.css";
 

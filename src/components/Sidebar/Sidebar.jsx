@@ -16,7 +16,7 @@ export const Sidebar = () => {
   return (
     <div className={`sidebar ${sidebarExpanded ? "expanded" : null}`}>
       <i
-        className="fa-solid fa-xmark fa-3x hamb-menu"
+        className="fa-solid fa-xmark fa-2x hamb-menu"
         onClick={onExpandBtn}
       ></i>
       <h3>About me</h3>

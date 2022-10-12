@@ -12,7 +12,7 @@ export const HambMenu = () => {
 
   return (
     <div className="content-hamb-menu">
-      <i className={`fa-solid fa-bars fa-3x hamb-menu ${sidebarExpanded ? 'hamb-hidden' : null}`} onClick={onExpandBtn}></i>
+      <i className={`fa-solid fa-bars fa-2x hamb-menu ${sidebarExpanded ? 'hamb-hidden' : null}`} onClick={onExpandBtn}></i>
     </div>
   );
 };

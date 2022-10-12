@@ -1,11 +1,13 @@
-import { HambMenu } from "../HambMenu/HambMenu";
+import { useDispatch } from "react-redux";
+
+import { HambMenu, ProfileContainer } from "../";
 import "./content.css";
 
 export const Content = () => {
   return (
     <div className="content">
-        <HambMenu />
-      <h1>Content</h1>
+      <HambMenu />
+      <ProfileContainer />
     </div>
   );
 };
