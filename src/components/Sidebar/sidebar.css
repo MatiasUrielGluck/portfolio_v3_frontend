@@ -55,3 +55,7 @@
     position: absolute;
     bottom: 16px;
 }
+
+.sidebar h3:last-of-type:hover {
+    transform: translateX(0%);
+}
