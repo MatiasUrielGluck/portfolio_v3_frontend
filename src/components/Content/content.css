@@ -10,6 +10,15 @@
     padding: 24px;
 }
 
+.grid-container {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-content: center;
+    gap: 36px;
+}
+
 @media only screen and (max-width: 960px) {
     .container {
         padding: 16px;
@@ -19,5 +28,9 @@
 @media only screen and (max-width: 768px) {
     .content {
         padding: 16px 4%;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
     }
 }
