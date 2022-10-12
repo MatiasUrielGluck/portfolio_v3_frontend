@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebar } from "../../store/slices/uiSlice";
 
@@ -24,7 +26,7 @@ export const Sidebar = () => {
       <h3>Hobbies</h3>
       <h3>Portfolio</h3>
       <h3>Contact</h3>
-      <h3>Login</h3>
+      <h3><NavLink to="/login">Login</NavLink></h3>
     </div>
   );
 };

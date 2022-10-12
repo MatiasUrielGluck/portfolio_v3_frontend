@@ -59,3 +59,8 @@
 .sidebar h3:last-of-type:hover {
     transform: translateX(0%);
 }
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+}
