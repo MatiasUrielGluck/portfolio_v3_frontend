@@ -1,3 +1,7 @@
+.skills-container h2 {
+    font-weight: 500;
+}
+
 .skills-container .skills-group {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -22,4 +26,10 @@
 
 .skills-container .skills-group .skill p {
     margin-right: 4px;
+}
+
+@media only screen and (max-width: 499px) {
+    .skills-container {
+        grid-column: 1 / 3;
+    }
 }

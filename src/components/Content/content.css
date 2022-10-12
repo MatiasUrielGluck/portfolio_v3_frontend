@@ -1,6 +1,9 @@
 .content {
     padding: 16px 56px;
     margin: 0 auto;
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
 }
 
 .container {
@@ -28,9 +31,5 @@
 @media only screen and (max-width: 768px) {
     .content {
         padding: 16px 4%;
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr;
     }
 }
