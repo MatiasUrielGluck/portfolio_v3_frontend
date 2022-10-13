@@ -49,8 +49,20 @@
 }
 
 @media only screen and (max-width: 960px) {
+    .profile-container {
+        justify-content: space-between;
+    }
+
     .profile-container .info-container i {
         margin-right: 1px;
+    }
+    
+    .profile-container .image-container {
+        width: 25%;
+    }
+
+    .profile-container .text-container {
+        width: 70%;
     }
 }
 

@@ -23,12 +23,13 @@
     background: var(--color-primary);
     padding: 16px 24px;
     border-radius: 16px;
-    margin: auto;
+    margin: auto;;
 }
 
 .experience-container a {
     color: white;
     text-decoration: none;
+    text-align: center;
 }
 
 @media only screen and (max-width: 960px) {
