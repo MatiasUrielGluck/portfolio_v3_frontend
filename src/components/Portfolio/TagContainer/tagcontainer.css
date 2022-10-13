@@ -18,6 +18,15 @@
     transition: all 0.3s ease;
 }
 
+.tag.enabled {
+    background: var(--color-primary);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.tag.enabled p {
+    color: white;
+}
+
 .tag:hover {
     border: 1px solid var(--color-primary);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
