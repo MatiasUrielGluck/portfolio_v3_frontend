@@ -2,6 +2,8 @@ import './cardcontainer.css'
 
 export const CardContainer = () => {
   return (
-    <div>CardContainer</div>
+    <div className='card-container container'>
+      
+    </div>
   )
 }
