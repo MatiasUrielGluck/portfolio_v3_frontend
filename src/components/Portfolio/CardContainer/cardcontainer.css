@@ -1,8 +1,19 @@
 .card-container {
     margin-top: 24px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 48px;
+}
+
+.card-container.big {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card-container.medium {
+    grid-template-columns: 1fr 1fr;
+}
+
+.card-container.small {
+    grid-template-columns: 1fr;
 }
 
 .card-container {

@@ -3,8 +3,11 @@ import { useEffect, useState } from "react";
 import { projectList } from "../data/tempProjects";
 
 export const usePagination = () => {
+  const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState();
   const [cardsPerPage, setCardsPerPage] = useState();
+
+  const [renderedProjectList, setRenderedProjectList] = useState(projectList);
 
   const calculateCardsPerPage = () => {
     if (window.innerWidth < 768) {
@@ -25,16 +28,20 @@ export const usePagination = () => {
 
     setTotalPages(totalPagesResult);
     setCardsPerPage(cardsPerPageResult);
+    return cardsPerPageResult;
   };
 
   useEffect(() => {
-    paginate();
+    let cardsPerPageResult = paginate();
   }, []);
 
   window.addEventListener("resize", paginate);
 
   return {
+    page,
+    setPage,
     totalPages,
     cardsPerPage,
+    renderedProjectList,
   };
 };
