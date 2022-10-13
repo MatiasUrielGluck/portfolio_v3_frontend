@@ -5,6 +5,7 @@ import {
   EducationContainer,
   ExperienceContainer,
   HobbiesContainer,
+  Porfolio,
 } from "../";
 import "./content.css";
 
@@ -25,7 +26,7 @@ export const Content = () => {
         <ExperienceContainer />
         <HobbiesContainer />
       </div>
-      {/* Portfolio */}
+      <Porfolio />
 
       {/* ContactContainer */}
     </div>

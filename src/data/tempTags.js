@@ -18,4 +18,20 @@ export const tagList = [
     id: 4,
     name: "Python",
   },
+  {
+    id: 5,
+    name: "Frontend",
+  },
+  {
+    id: 6,
+    name: "Backend",
+  },
+  {
+    id: 7,
+    name: "Vue JS",
+  },
+  {
+    id: 8,
+    name: "CSS",
+  },
 ];

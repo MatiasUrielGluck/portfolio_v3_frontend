@@ -1,0 +1,24 @@
+.tag-container h2 {
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.tag-container .tag-list {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.tag {
+    cursor: pointer;
+    padding: 10px 12px;
+    border: 1px solid var(--color-title);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    border: 1px solid var(--color-primary);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

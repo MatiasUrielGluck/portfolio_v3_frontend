@@ -6,14 +6,15 @@ import { BrowserRouter } from "react-router-dom";
 import { store } from "./store";
 import { Provider } from "react-redux";
 
-import { Portfolio } from "./Portfolio";
+import { PortfolioApp } from "./PortfolioApp";
+
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <Portfolio />
+        <PortfolioApp />
       </Provider>
     </BrowserRouter>
   </React.StrictMode>
