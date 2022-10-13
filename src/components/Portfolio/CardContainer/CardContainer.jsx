@@ -4,7 +4,7 @@ import './cardcontainer.css'
 
 import {projectList} from '../../../data/tempProjects';
 
-export const CardContainer = () => {
+export const CardContainer = ({ page }) => {
   return (
     <div className='card-container'>
       {/* Calculate card amount by window size */}

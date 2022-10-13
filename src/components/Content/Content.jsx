@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+
 import {
   HambMenu,
   ProfileContainer,
@@ -7,13 +9,16 @@ import {
   HobbiesContainer,
   Porfolio,
 } from "../";
+
 import "./content.css";
 
 import { frontSkillList, backSkillList } from "../../data/tempSkills"; // *1 TEMP TODO
 
 export const Content = () => {
+  const {sidebarExpanded} = useSelector(state => state.ui)
+
   return (
-    <div className="content">
+    <div className={`content ${sidebarExpanded ? 'compact' : null}`}>
       <HambMenu />
       <ProfileContainer />
       <div className="grid-container">

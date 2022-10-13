@@ -1,0 +1,24 @@
+.page-container {
+    margin-top: 24px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.page-container .btn {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-container .main-btn {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+}
