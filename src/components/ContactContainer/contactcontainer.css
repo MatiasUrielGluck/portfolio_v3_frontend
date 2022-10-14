@@ -1,0 +1,21 @@
+.contact-container {
+    margin-top: 24px;
+}
+
+.contact-container h2 {
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.contact-container .social-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.contact-container .social-container a {
+    color: black;
+    text-decoration: none;
+}

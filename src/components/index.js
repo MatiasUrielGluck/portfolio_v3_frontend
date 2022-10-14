@@ -7,3 +7,4 @@ export * from "./EducationContainer";
 export * from "./ExperienceContainer";
 export * from "./HobbiesContainer";
 export * from "./Portfolio";
+export * from "./ContactContainer";

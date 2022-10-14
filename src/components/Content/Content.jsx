@@ -8,6 +8,7 @@ import {
   ExperienceContainer,
   HobbiesContainer,
   Porfolio,
+  ContactContainer
 } from "../";
 
 import "./content.css";
@@ -33,7 +34,7 @@ export const Content = () => {
       </div>
       <Porfolio />
 
-      {/* ContactContainer */}
+      <ContactContainer />
     </div>
   );
 };
