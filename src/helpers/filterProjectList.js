@@ -1,9 +1,6 @@
-import { useSelector } from "react-redux";
 import { projectList } from "../data/tempProjects";
 
-export const filterProjectList = (localCardsPerPage, localPage) => {
-  const { tagList } = useSelector((state) => state.projectList);
-
+export const filterProjectList = (tagList) => {
   let filteredByTagProjectList = projectList;
 
   if (tagList.length > 0) {
@@ -20,25 +17,5 @@ export const filterProjectList = (localCardsPerPage, localPage) => {
       if (pusheable) filteredByTagProjectList.push(project);
     }
   }
-
-  let rawPage = localPage - 1;
-
-  const filteredProjectList = [];
-
-  for (
-    let i = localCardsPerPage * rawPage;
-    i < localCardsPerPage * rawPage + localCardsPerPage;
-    i++
-  ) {
-    if (
-      i < 0 ||
-      i > filteredByTagProjectList.length - 1 ||
-      !filteredByTagProjectList[i]
-    )
-      break;
-
-    filteredProjectList.push(filteredByTagProjectList[i]);
-  }
-
-  return filteredProjectList;
+  return filteredByTagProjectList;
 };
