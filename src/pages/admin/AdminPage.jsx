@@ -1,5 +1,10 @@
+import { Navbar, AdminContainer } from "../../components"
+
 export const AdminPage = () => {
   return (
-    <div>AdminPage</div>
+    <div className="admin-page">
+       <Navbar />
+       <AdminContainer />
+    </div>
   )
 }

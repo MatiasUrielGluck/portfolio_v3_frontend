@@ -1,0 +1,47 @@
+.admin-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 16px;
+    padding: 24px;
+    max-width: 1200px;
+    margin: 24px auto;
+}
+
+.admin-container .panel {
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+    background: rgb(218, 218, 218);
+    border: 2px solid var(--color-primary);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transition: all 0.3s ease;
+}
+
+.admin-container .panel:hover {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+@media only screen and (max-width: 1050px) {
+    .admin-container .panel {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .admin-container {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .admin-container .panel {
+        width: 300px;
+        height: 300px;
+    }
+}
