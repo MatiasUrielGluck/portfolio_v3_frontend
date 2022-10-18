@@ -8,26 +8,23 @@ import {
   ExperienceContainer,
   HobbiesContainer,
   Porfolio,
-  ContactContainer
+  ContactContainer,
 } from "../";
 
 import "./content.css";
-
-import { frontSkillList, backSkillList } from "../../data/tempSkills"; // *1 TEMP TODO
+import { useSkills } from "../../hooks";
 
 export const Content = () => {
-  const {sidebarExpanded} = useSelector(state => state.ui)
+  const { sidebarExpanded } = useSelector((state) => state.ui);
+  const { frontSkillList, backSkillList } = useSkills();
 
   return (
-    <div className={`content ${sidebarExpanded ? 'compact' : null}`}>
+    <div className={`content ${sidebarExpanded ? "compact" : null}`}>
       <HambMenu />
       <ProfileContainer />
       <div className="grid-container">
-        {/* TODO */}
-        <SkillsContainer skillsCategory="Frontend" skillList={frontSkillList} />{" "}
-        <SkillsContainer skillsCategory="Backend" skillList={backSkillList} />{" "}
-        {/* ---- */}
-        
+        <SkillsContainer skillsCategory="Frontend" skillList={frontSkillList} />
+        <SkillsContainer skillsCategory="Backend" skillList={backSkillList} />
         <EducationContainer />
         <ExperienceContainer />
         <HobbiesContainer />
