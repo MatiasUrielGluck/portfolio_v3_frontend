@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useProjects } from "../../hooks";
 import { TagContainer, CardContainer, PageContainer } from "./";
-
 import { setProjectList } from "../../store/slices/projectListSlice";
-import "./portfolio.css";
 import {
   calculateCardsPerPage,
   filterProjectList,
   paginate,
 } from "../../helpers";
+import "./portfolio.css";
 
-export const Porfolio = () => {
+export const Porfolio = ({projectList = []}) => {
   const dispatch = useDispatch();
 
   const [page, setPage] = useState(1);
@@ -26,9 +26,9 @@ export const Porfolio = () => {
   const { tagList } = useSelector((state) => state.projectList);
 
   useEffect(() => {
-    const newProjectList = filterProjectList(tagList, 3, 1);
+    const newProjectList = filterProjectList(projectList, tagList);
     dispatch(setProjectList(newProjectList));
-  }, [tagList]);
+  }, [tagList, projectList]);
 
   const { filteredProjectList } = useSelector((state) => state.projectList);
 

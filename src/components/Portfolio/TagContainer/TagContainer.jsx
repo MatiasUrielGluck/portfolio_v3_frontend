@@ -1,10 +1,11 @@
 import './tagcontainer.css'
 
-import { projectList } from '../../../data/tempProjects'
-import { tagList } from '../../../data/tempTags'
 import { Tag } from './Tag'
+import { useProjects } from '../../../hooks'
 
 export const TagContainer = () => {
+  const { projectList, tagList } = useProjects()
+
   return (
     <div className='tag-container container'>
         <h2 className='title'>Projects ({projectList.length})</h2>

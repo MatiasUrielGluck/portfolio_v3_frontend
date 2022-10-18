@@ -17,10 +17,10 @@ export const CardContainer = ({ projectList, cardsPerPage }) => {
     <div className={`card-container ${getLayoutSize()}`}>
       {projectList.map((project) => (
         <Card
-          img={project.img}
+          img={project.image}
           name={project.name}
-          desc={project.desc}
-          tagList={project.tagList}
+          desc={project.description}
+          tagList={project.Tags}
           key={project.id}
         />
       ))}

@@ -1,7 +1,6 @@
-import { projectList } from "../data/tempProjects";
-
-export const filterProjectList = (tagList) => {
+export const filterProjectList = (projectList, tagList) => {
   let filteredByTagProjectList = projectList;
+  // console.log(projectList)
 
   if (tagList.length > 0) {
     filteredByTagProjectList = [];
