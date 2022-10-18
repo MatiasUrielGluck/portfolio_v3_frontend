@@ -1,9 +1,12 @@
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    padding: 12px;
+    padding: 20px;
     background: var(--color-primary);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }

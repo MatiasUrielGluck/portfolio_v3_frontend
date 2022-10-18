@@ -1,0 +1,68 @@
+.skills-container h2 {
+    font-weight: 500;
+}
+
+.skills-container .add-btn {
+    margin-left: 12px;
+    color: rgb(29, 181, 29);
+    cursor: pointer;
+}
+
+.skills-container .btn {
+    transition: all 0.3s ease;
+}
+
+.skills-container .btn:active {
+    transform: scale(90%);
+}
+
+.skills-container .skills-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    row-gap: 12px;
+    justify-content: center;
+    align-content: center;
+    margin-top: 24px;
+}
+
+.skills-container .skills-group .skill {
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 0 4px;
+    height: 40px;
+    border: 1px solid var(--color-title);
+    border-radius: 12px;
+}
+
+.skills-container .skills-group .skill .actions-container {
+    margin-left: 12px;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 8px;
+}
+
+.skills-container .skills-group .skill .actions-container i {
+    cursor: pointer;
+}
+
+.skills-container .skills-group .skill .actions-container i:first-of-type {
+    color: var(--color-primary);
+}
+
+.skills-container .skills-group .skill .actions-container i:last-of-type {
+    color: rgb(245, 27, 27);
+}
+
+.skills-container .skills-group .skill p {
+    margin-right: 4px;
+}
+
+@media only screen and (max-width: 499px) {
+    .skills-container {
+        grid-column: 1 / 3;
+    }
+}

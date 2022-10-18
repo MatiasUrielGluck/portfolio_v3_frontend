@@ -49,6 +49,7 @@
 }
 
 .login-container p {
+    cursor: default;
     margin-bottom: 16px;
     color: red;
 }
@@ -84,9 +85,7 @@
 }
 
 .login-container a:last-of-type:hover {
-    border-radius: 16px;
-    border: 1px solid black;
-    padding: 8px 20px;
+    font-weight: 700;
 }
 
 .login-container a:last-of-type:active {
@@ -95,7 +94,7 @@
 
 @media only screen and (max-width: 768px) {
     .login-container .login-subcontainer {
-        height: 80%;
+        height: 60%;
         width: 90%;
     }
 }

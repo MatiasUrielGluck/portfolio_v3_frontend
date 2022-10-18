@@ -1,10 +1,13 @@
 import { Navbar, AdminContainer } from "../";
+import "./adminpanel.css";
 
 export const AdminPanel = () => {
   return (
-    <div>
+    <div className="admin-panel">
       <Navbar />
-      <AdminContainer />
+      <div className="content-container">
+        <AdminContainer />
+      </div>
     </div>
   );
 };

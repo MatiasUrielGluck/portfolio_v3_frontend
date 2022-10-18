@@ -11,3 +11,5 @@ export * from "./ContactContainer";
 export * from "./AdminPanel";
 export * from "./Navbar";
 export * from "./AdminContainer";
+export * from "./SkillsAdmin";
+export * from "./AdminSkillsContainer";

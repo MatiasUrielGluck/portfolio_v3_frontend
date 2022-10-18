@@ -1,0 +1,29 @@
+.skills-admin {
+    width: 100%;
+    height: 100vh;
+}
+
+.skills-admin .content-container {
+    padding: 16px;
+    margin-top: 64px;
+    text-align: center;
+}
+
+.skills-admin .content-container h2 {
+    margin-bottom: 48px;
+}
+
+.skills-admin .skills-panel-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+    .skills-admin .skills-panel-container {
+        grid-template-columns: 1fr;
+    }
+    
+}
