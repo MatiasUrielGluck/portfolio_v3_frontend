@@ -8,5 +8,6 @@ export * from "./ExperienceContainer";
 export * from "./HobbiesContainer";
 export * from "./Portfolio";
 export * from "./ContactContainer";
+export * from "./AdminPanel";
 export * from "./Navbar";
 export * from "./AdminContainer";
