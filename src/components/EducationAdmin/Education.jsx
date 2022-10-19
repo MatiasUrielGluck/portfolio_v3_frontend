@@ -1,9 +1,19 @@
 import { useContext } from "react";
 
 export const Education = ({ Context, id, title, subtitle }) => {
-  const { setDeleteWindow, setToDeleteEducationId } = useContext(Context);
+  const {
+    setDeleteWindow,
+    setToDeleteEducationId,
+    setEditWindow,
+    setToEditEducationId,
+    setEducationInfo,
+  } = useContext(Context);
 
-  const onEdit = () => {};
+  const onEdit = () => {
+    setToEditEducationId(id);
+    setEducationInfo({ title, subtitle });
+    setEditWindow(true);
+  };
 
   const onDelete = () => {
     setToDeleteEducationId(id);
