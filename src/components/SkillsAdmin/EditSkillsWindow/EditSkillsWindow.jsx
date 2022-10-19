@@ -1,37 +1,37 @@
 import { useContext } from "react";
 import publicApi from "../../../api/publicApi";
 import { useForm } from "../../../hooks";
-import "./createskillwindow.css";
+import "./editskillwindow.css";
 
-export const CreateSkillsWindow = ({ Context }) => {
-  const { setCreateWindow, createCategory } = useContext(Context);
+export const EditSkillsWindow = ({ Context }) => {
+  const { setEditWindow, skillInfo, toEditSkillId } = useContext(Context);
 
   const { skillName, skillIcon, onInputChange } = useForm({
-    skillName: "",
-    skillIcon: "",
+    skillName: skillInfo.skillName,
+    skillIcon: skillInfo.skillIcon,
   });
 
   const onCloseWindow = () => {
-    setCreateWindow(false);
+    setEditWindow(false);
   };
 
-  const onCreate = async (e) => {
+  const onEdit = async (e) => {
     e.preventDefault();
 
-    await publicApi().post("/skills", {
-      context: createCategory.toLowerCase(),
+    await publicApi().patch("/skills/" + toEditSkillId, {
       name: skillName,
       icon: skillIcon,
     });
+
     onCloseWindow();
   };
 
   return (
     <div className="create-window">
       <div className="window-container">
-        <h2>Create {createCategory} Skill</h2>
+        <h2>Edit Skill</h2>
 
-        <form onSubmit={onCreate}>
+        <form onSubmit={onEdit}>
           <input
             type="text"
             name="skillName"
@@ -52,7 +52,7 @@ export const CreateSkillsWindow = ({ Context }) => {
           <div className="btn" onClick={onCloseWindow}>
             Cancel
           </div>
-          <div className="btn" onClick={onCreate}>
+          <div className="btn" onClick={onEdit}>
             Create
           </div>
         </div>
