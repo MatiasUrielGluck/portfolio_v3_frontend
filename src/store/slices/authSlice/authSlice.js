@@ -31,7 +31,10 @@ export const authSlice = createSlice({
     },
 
     logout: (state) => {
-      state = initialState;
+      localStorage.removeItem("token")
+      for (const key of Object.keys(state)) {
+        state[key] = initialState[key]
+      }
     },
   },
 });

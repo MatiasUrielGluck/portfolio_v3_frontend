@@ -1,7 +1,14 @@
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { logout } from "../../store/slices/authSlice/authSlice";
 import "./navbar.css";
 
 export const Navbar = () => {
+  const dispatch = useDispatch();
+  const onLogout = () => {
+    dispatch(logout());
+  };
+
   return (
     <div className="navbar">
       <ul>
@@ -13,9 +20,7 @@ export const Navbar = () => {
         <NavLink to="/">
           <li>Homepage</li>
         </NavLink>
-        <NavLink to="/logout">
-          <li>Logout</li>
-        </NavLink>
+        <li onClick={onLogout}>Logout</li>
       </ul>
     </div>
   );

@@ -24,6 +24,12 @@
 
 .navbar ul li {
     cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.navbar ul li:last-of-type:hover {
+    font-weight: 700;
 }
 
 .navbar ul a {

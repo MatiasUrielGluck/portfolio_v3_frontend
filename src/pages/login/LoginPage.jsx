@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { useAuth, useForm } from "../../hooks";
@@ -11,6 +12,8 @@ export const LoginPage = () => {
   const dispatch = useDispatch();
   const { authenticated } = useSelector((state) => state.auth);
   const navigate = useNavigate();
+
+  const [loginError, setLoginError] = useState(false);
 
   const { onInputChange, username, password } = useForm({
     username: "",
@@ -31,9 +34,11 @@ export const LoginPage = () => {
 
       const payload = { user: user.username, token: user.token };
       dispatch(setUser(payload));
+
+      setLoginError(false);
       navigate("/admin");
     } catch (error) {
-      console.log(error);
+      setLoginError(true);
     }
   };
 
@@ -60,7 +65,9 @@ export const LoginPage = () => {
                 value={password}
                 onChange={onInputChange}
               />
-              <p className="errorMsg hidden">Username or password incorrect</p>
+              <p className={`errorMsg ${loginError ? "" : "hidden"}`}>
+                Username or password incorrect
+              </p>
               <button type="submit">Login</button>
             </form>
             <NavLink to="/">Back to homepage</NavLink>
