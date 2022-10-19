@@ -1,0 +1,80 @@
+.education-admin {
+    width: 100%;
+    height: 100vh;
+}
+
+.education-admin .content-container {
+    padding: 16px;
+}
+
+.education-admin .content-container h2 {
+    text-align: center;
+    margin-top: 64px;
+}
+
+.education-admin .content-container .education-container {
+    margin-top: 48px;
+}
+
+.education-admin .btn {
+    cursor: pointer;
+    padding: 0 16px;
+    width: fit-content;
+    height: 45px;
+    color: white;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.education-admin .btn:hover {
+    background: rgb(25, 162, 25);
+    border-radius: 0;
+}
+
+.education-admin .btn:active {
+    transform: scale(95%);
+}
+
+.education-admin .add-btn {
+    margin: 36px 0 0 auto;
+    background: rgb(29, 181, 29);
+}
+
+.education-admin .education {
+    max-width: 1200px;
+    margin: 36px auto;
+}
+
+.education-admin .education .education-title {
+    font-weight: 800;
+    color: var(--color-title);
+    margin-bottom: 12px;
+}
+
+.education-admin .education .education-subtitle {
+    font-weight: 500;
+}
+
+.education-admin .education {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.education-admin .education .right-container {
+    display: flex;
+    justify-items: center;
+    gap: 8px;
+}
+
+.education-admin .education .action-btn:first-of-type {
+    background: var(--color-primary);
+}
+
+.education-admin .education .action-btn:last-of-type {
+    background: rgb(245, 27, 27);
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import publicApi from "../api/publicApi";
 
-export const useEducation = () => {
+export const useEducation = (dependencyList) => {
   const [educationList, setEducationList] = useState([]);
 
   const getEducationList = async () => {
@@ -13,7 +13,7 @@ export const useEducation = () => {
 
   useEffect(() => {
     getEducationList();
-  }, []);
+  }, dependencyList);
 
   return {
     educationList,

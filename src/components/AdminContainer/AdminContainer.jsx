@@ -14,7 +14,7 @@ export const AdminContainer = () => {
         <h2>Skills</h2>
         <i className="fa-sharp fa-solid fa-wand-magic-sparkles fa-2x"></i>
       </div>
-      <div className="panel">
+      <div className="panel" onClick={() => onPanelClick("/admin/education")}>
         <h2>Education</h2>
         <i className="fa-solid fa-book-open fa-2x"></i>
       </div>
