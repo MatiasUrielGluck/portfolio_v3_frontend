@@ -1,21 +1,105 @@
 .projects-admin {
     width: 100%;
     height: 100vh;
+}
+
+.projects-admin .content-container {
     padding: 16px;
 }
 
-.projects-admin .projects-subcontainer {
+.projects-admin .content-container h2 {
+    text-align: center;
     margin-top: 64px;
 }
 
-.projects-admin .projects-subcontainer h2 {
-    text-align: center;
-}
-
-.projects-admin .projects-subcontainer h3 {
+.projects-admin .content-container .projects-container {
     margin-top: 48px;
 }
 
-.projects-admin .preview-image {
-    width: 300px;
+.projects-admin .btn {
+    cursor: pointer;
+    padding: 0 16px;
+    width: fit-content;
+    height: 45px;
+    color: white;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.projects-admin .btn:hover {
+    background: rgb(25, 162, 25);
+    border-radius: 0;
+}
+
+.projects-admin .btn:active {
+    transform: scale(95%);
+}
+
+.projects-admin .add-btn {
+    margin: 36px 0 0 auto;
+    background: rgb(29, 181, 29);
+}
+
+.projects-admin .project {
+    max-width: 1200px;
+    margin: 36px auto;
+}
+
+.projects-admin .project .project-title {
+    font-weight: 800;
+    color: var(--color-title);
+    margin-bottom: 24px;
+}
+
+.projects-admin .project .project-tags {
+    margin-bottom: 12px;
+}
+
+.projects-admin .project .project-subtitle {
+    font-weight: 500;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-title);
+}
+
+.projects-admin .project .project-subtitle a {
+    color: black;
+    word-wrap: break-word;
+}
+
+.projects-admin .project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projects-admin .project .right-container {
+    display: flex;
+    justify-items: center;
+    gap: 8px;
+}
+
+.projects-admin .project .action-btn:first-of-type {
+    background: var(--color-primary);
+}
+
+.projects-admin .project .action-btn:last-of-type {
+    background: rgb(245, 27, 27);
+}
+
+@media only screen and (max-width: 900px) {
+    .projects-admin .project {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 36px;
+    }
+
+    .projects-admin .project .left-container {
+        width: 100%;
+    }
 }

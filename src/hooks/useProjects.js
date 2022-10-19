@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import publicApi from "../api/publicApi";
 
-export const useProjects = () => {
+export const useProjects = (dependencyList) => {
   const [projectList, setProjectList] = useState([]);
   const [tagList, setTagList] = useState([]);
 
@@ -22,7 +22,7 @@ export const useProjects = () => {
   useEffect(() => {
     getProjectList();
     getTagList();
-  }, []);
+  }, dependencyList);
 
   return {
     projectList,

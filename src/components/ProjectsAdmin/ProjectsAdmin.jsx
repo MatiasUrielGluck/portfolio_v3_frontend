@@ -1,68 +1,82 @@
-import { useState } from "react";
-import { Navbar } from "../";
-import publicApi from "../../api/publicApi";
+import { createContext, useState } from "react";
+import { useProjects } from "../../hooks";
+import { DeleteWindow } from "../DeleteWindow";
+import { Navbar } from "../Navbar";
+import { CreateProjectWindow } from "./CreateProjectWindow/CreateProjectWindow";
+import { EditProjectWindow } from "./EditProjectWindow/EditProjectWindow";
+import { Project } from "./Project";
 import "./projectsadmin.css";
 
 export const ProjectsAdmin = () => {
-  const [previewSource, setPreviewSource] = useState("");
+  const [deleteWindow, setDeleteWindow] = useState(false);
+  const [toDeleteProjectId, setToDeleteProjectId] = useState(-1);
 
-  const onFormSubmit = (e) => {
-    e.preventDefault();
-    if (!previewSource) return;
-    // uploadImage(previewSource)
-    uploadImage("test", "testing desc", previewSource, "httpsxd", "asdfasdfhtml")
+  const [createWindow, setCreateWindow] = useState(false);
+
+  const [editWindow, setEditWindow] = useState(false);
+  const [toEditProjectId, setToEditProjectId] = useState(-1);
+  const [projectInfo, setProjectInfo] = useState({});
+
+  const { projectList } = useProjects([deleteWindow, createWindow, editWindow]);
+
+  const projectsValues = {
+    setDeleteWindow,
+    setToDeleteProjectId,
+    toDeleteId: toDeleteProjectId,
+    endpoint: "projects",
+
+    createWindow,
+    setCreateWindow,
+
+    editWindow,
+    setEditWindow,
+    setToEditProjectId,
+    toEditProjectId,
+    projectInfo,
+    setProjectInfo,
   };
- 
-  const uploadImage = async (name, description, base64EncodedImage, demoLink, codeLink) => {
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsInVzZXJuYW1lIjoibWF0aWFzIiwiYXBwcm92ZWQiOnRydWUsImlhdCI6MTY2NjEzNDY2OSwiZXhwIjoxNjY2MTQxODY5fQ.EX0WbkWkNIHlMIePjHm6cHEnfK9dGdI1HKCweK1VoJs" // TODO: From localstorage
-    const result = await publicApi().post('/projects', { name, description, image: base64EncodedImage, demoLink, codeLink, token });
-    console.log(result)
-  }
 
-  const previewFile = (file) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = () => {
-      setPreviewSource(reader.result);
-    };
-  };
+  const ProjectsContext = createContext();
 
-  const onFileInputChange = (e) => {
-    const file = e.target.files[0];
-    previewFile(file);
+  const onCreate = () => {
+    setCreateWindow(true);
   };
 
   return (
-    <>
-      <Navbar />
-      <div className="projects-admin">
-        <div className="projects-subcontainer">
-          <h2>Projects Administrator</h2>
-          <h3>Add new project</h3>
-          <form onSubmit={onFormSubmit}>
-            <input type="text" name="name" placeholder="Name" />
-            <input type="text" name="description" placeholder="Description" />
-            <input type="text" name="demoLink" placeholder="Demo link" />
-            <input type="text" name="codeLink" placeholder="Code link" />
-            <input
-              type="file"
-              name="image"
-              onChange={onFileInputChange}
-            />
-            <button type="submit">Create project</button>
-          </form>
+    <ProjectsContext.Provider value={projectsValues}>
+      {deleteWindow ? <DeleteWindow Context={ProjectsContext} /> : null}
+      {createWindow ? (
+        <CreateProjectWindow Context={ProjectsContext} />
+      ) : null}
 
-          {previewSource ? (
-            <img
-              src={previewSource}
-              alt="selected image"
-              className="preview-image"
-            />
-          ) : (
-            ""
-          )}
+      {editWindow ? <EditProjectWindow Context={ProjectsContext} /> : null}
+
+      <div className="projects-admin">
+        <Navbar />
+        <div className="content-container">
+          <h2>Projects Administrator</h2>
+
+          <div className="add-btn btn" onClick={onCreate}>
+            Add Project
+          </div>
+
+          <div className="project-container">
+            {projectList.map((project) => (
+              <Project
+                Context={ProjectsContext}
+                id={project.id}
+                name={project.name}
+                description={project.description}
+                Tags={project.Tags}
+                imageURL={project.imageURL}
+                demoLink={project.demoLink}
+                codeLink={project.codeLink}
+                key={project.id}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </>
+    </ProjectsContext.Provider>
   );
 };
