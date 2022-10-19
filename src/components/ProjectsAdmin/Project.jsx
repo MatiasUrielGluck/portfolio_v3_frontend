@@ -20,7 +20,14 @@ export const Project = ({
 
   const onEdit = () => {
     setToEditProjectId(id);
-    setProjectInfo({});
+    setProjectInfo({
+      id,
+      name,
+      description,
+      Tags,
+      demoLink,
+      codeLink,
+    });
     setEditWindow(true);
   };
 
