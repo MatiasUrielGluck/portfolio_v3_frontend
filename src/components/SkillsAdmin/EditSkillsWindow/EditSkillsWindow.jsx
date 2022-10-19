@@ -18,10 +18,14 @@ export const EditSkillsWindow = ({ Context }) => {
   const onEdit = async (e) => {
     e.preventDefault();
 
-    await publicApi().patch("/skills/" + toEditSkillId, {
-      name: skillName,
-      icon: skillIcon,
-    });
+    try {
+      await publicApi().patch("/skills/" + toEditSkillId, {
+        name: skillName,
+        icon: skillIcon,
+      });
+    } catch (error) {
+      console.log(error.response.data);
+    }
 
     onCloseWindow();
   };
@@ -53,7 +57,7 @@ export const EditSkillsWindow = ({ Context }) => {
             Cancel
           </div>
           <div className="btn" onClick={onEdit}>
-            Create
+            Save
           </div>
         </div>
       </div>
