@@ -1,13 +1,12 @@
 export const filterProjectList = (projectList, tagList) => {
   let filteredByTagProjectList = projectList;
-  // console.log(projectList)
 
   if (tagList.length > 0) {
     filteredByTagProjectList = [];
     for (const project of projectList) {
       let pusheable = true;
       for (const tag of tagList) {
-        if (!project.tagList.map((tag) => tag.name).includes(tag)) {
+        if (!project.Tags.map((tag) => tag.name).includes(tag)) {
           pusheable = false;
           break;
         }

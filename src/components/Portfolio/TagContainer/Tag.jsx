@@ -5,7 +5,6 @@ import { addTag, removeTag } from "../../../store/slices/projectListSlice";
 export const Tag = ({ name }) => {
   const [enabled, setEnabled] = useState(false);
 
-  const { tagList } = useSelector((state) => state.projectList);
   const dispatch = useDispatch();
 
   const toggleTag = () => {

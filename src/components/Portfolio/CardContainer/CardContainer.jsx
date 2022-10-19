@@ -2,7 +2,6 @@ import { Card } from "../Card/Card";
 import "./cardcontainer.css";
 
 export const CardContainer = ({ projectList, cardsPerPage }) => {
-  // DEBE RECIBIR SOLO LA LISTA A RENDERIZAR
   const getLayoutSize = () => {
     if (cardsPerPage === 3) {
       return "big";
