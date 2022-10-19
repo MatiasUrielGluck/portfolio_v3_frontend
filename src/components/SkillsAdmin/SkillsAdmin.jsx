@@ -1,16 +1,35 @@
-import { AdminSkillsContainer, DeleteWindow } from "../";
-import { Navbar } from "../Navbar";
+import { createContext, useState } from "react";
+import { AdminSkillsContainer, DeleteWindow, Navbar } from "../";
+import { useSkills } from "../../hooks";
+import { CreateSkillsWindow } from "./CreateSkillsWindow/CreateSkillsWindow";
 import "./skillsadmin.css";
-
-import { frontSkillList, backSkillList } from "../../data/tempSkills";
-import { useState } from "react";
 
 export const SkillsAdmin = () => {
   const [deleteWindow, setDeleteWindow] = useState(false);
 
+  const [toDeleteSkillId, setToDeleteSkillId] = useState(-1);
+
+  const [createWindow, setCreateWindow] = useState(false);
+
+  const { frontSkillList, backSkillList } = useSkills(deleteWindow);
+
+  const skillsValues = {
+    setDeleteWindow,
+    setToDeleteSkillId,
+    toDeleteId: toDeleteSkillId,
+    endpoint: "skills",
+
+    createWindow,
+    setCreateWindow,
+  };
+
+  const SkillsContext = createContext();
+
   return (
-    <>
-      {deleteWindow ? <DeleteWindow setDeleteWindow={setDeleteWindow} /> : null}
+    <SkillsContext.Provider value={skillsValues}>
+      {deleteWindow ? <DeleteWindow Context={SkillsContext} /> : null}
+
+      {createWindow ? <CreateSkillsWindow /> : null}
 
       <div className="skills-admin">
         <Navbar />
@@ -18,18 +37,18 @@ export const SkillsAdmin = () => {
           <h2>Skills Administrator</h2>
           <div className="skills-panel-container">
             <AdminSkillsContainer
+              Context={SkillsContext}
               skillsCategory="Frontend"
               skillList={frontSkillList}
-              setDeleteWindow={setDeleteWindow}
             />
             <AdminSkillsContainer
+              Context={SkillsContext}
               skillsCategory="Backend"
-              skillList={frontSkillList}
-              setDeleteWindow={setDeleteWindow}
+              skillList={backSkillList}
             />
           </div>
         </div>
       </div>
-    </>
+    </SkillsContext.Provider>
   );
 };

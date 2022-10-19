@@ -1,7 +1,17 @@
-export const AdminSkill = ({ skillName, skillIcon, setDeleteWindow }) => {
+import { useContext } from "react";
+
+export const AdminSkill = ({
+  Context,
+  skillId,
+  skillName,
+  skillIcon,
+}) => {
+  const { setDeleteWindow, setToDeleteSkillId } = useContext(Context);
+
   const onDelete = () => {
-    setDeleteWindow(true)
-  }
+    setDeleteWindow(true);
+    setToDeleteSkillId(skillId); // BUG -1
+  };
 
   return (
     <div className="skill">

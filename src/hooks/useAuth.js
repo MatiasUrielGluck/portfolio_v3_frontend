@@ -11,18 +11,23 @@ export const useAuth = () => {
     dispatch(startCheckingAuth());
 
     const token = localStorage.getItem("token");
+
     if (token) {
-      const resp = await authApi().post("/validatetoken", {
-        token,
-      });
+      try {
+        const resp = await authApi().post("/validatetoken", {
+          token,
+        });
 
-      const respData = await resp.data;
-      const data = await respData.data;
+        const respData = await resp.data;
+        const data = await respData.data;
 
-      if (respData.status === "success") {
-        dispatch(setUser({ username: data.username, token }));
-        
-      } else {
+        if (respData.status === "success" && data.data.approved) {
+          dispatch(setUser({ username: data.username, token }));
+        } else {
+          dispatch(logout());
+        }
+
+      } catch (error) {
         dispatch(logout());
       }
     } else {

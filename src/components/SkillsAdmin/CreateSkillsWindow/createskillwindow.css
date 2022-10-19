@@ -1,0 +1,78 @@
+/* THIS IS TO PREVENT THIS COMPONENT FROM SCROLLING WHEN THIS WINDOW IS RENDERED */
+.skills-admin {
+    overflow: hidden;
+}
+/* ------- */
+
+.create-window {
+    z-index: 15;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.71);
+    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-window .window-container {
+    width: fit-content;
+    height: 250px;
+    background: rgb(233, 233, 233);
+    border-radius: 16px;
+    padding: 16px 36px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    animation: entry 0.3s ease;
+}
+
+.create-window .window-container h2 {
+    text-align: center;
+}
+
+.create-window .window-container .actions-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.create-window .window-container .actions-container .btn {
+    cursor: pointer;
+    width: 100px;
+    height: 45px;
+    border-radius: 16px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-window .window-container .actions-container .btn:first-of-type {
+    background: rgb(29, 181, 29);
+}
+
+.create-window .window-container .actions-container .btn:last-of-type {
+    background: rgb(200, 19, 19);
+}
+
+@keyframes entry {
+    0% {
+        transform: scale(0%);
+    }
+    100% {
+        transform: scale(100%);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .delete-window .window-container {
+        width: 80%;
+    }
+}

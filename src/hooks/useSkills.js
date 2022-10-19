@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import publicApi from "../api/publicApi";
 import { filterSkillList } from "../helpers";
 
-export const useSkills = () => {
+export const useSkills = (deleteWindow) => {
   const [frontSkillList, setFrontSkillList] = useState([]);
   const [backSkillList, setBackSkillList] = useState([]);
 
@@ -17,7 +17,7 @@ export const useSkills = () => {
 
   useEffect(() => {
     getSkillList();
-  }, []);
+  }, [deleteWindow]);
 
   return { frontSkillList, backSkillList, setFrontSkillList, setBackSkillList };
 };
