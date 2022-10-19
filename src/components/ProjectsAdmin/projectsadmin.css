@@ -86,9 +86,14 @@
     background: var(--color-primary);
 }
 
-.projects-admin .project .action-btn:last-of-type {
+.projects-admin .project .action-btn:nth-of-type(2) {
+    background: rgb(196, 193, 13);
+}
+
+.projects-admin .project .action-btn:nth-of-type(3) {
     background: rgb(245, 27, 27);
 }
+
 
 @media only screen and (max-width: 900px) {
     .projects-admin .project {

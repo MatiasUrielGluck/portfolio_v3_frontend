@@ -6,6 +6,7 @@ import { CreateProjectWindow } from "./CreateProjectWindow/CreateProjectWindow";
 import { EditProjectWindow } from "./EditProjectWindow/EditProjectWindow";
 import { Project } from "./Project";
 import "./projectsadmin.css";
+import { TagsWindow } from "./TagsWindow/TagsWindow";
 
 export const ProjectsAdmin = () => {
   const [deleteWindow, setDeleteWindow] = useState(false);
@@ -16,6 +17,8 @@ export const ProjectsAdmin = () => {
   const [editWindow, setEditWindow] = useState(false);
   const [toEditProjectId, setToEditProjectId] = useState(-1);
   const [projectInfo, setProjectInfo] = useState({});
+
+  const [tagsWindow, setTagsWindow] = useState(false);
 
   const { projectList } = useProjects([deleteWindow, createWindow, editWindow]);
 
@@ -34,6 +37,9 @@ export const ProjectsAdmin = () => {
     toEditProjectId,
     projectInfo,
     setProjectInfo,
+
+    tagsWindow,
+    setTagsWindow,
   };
 
   const ProjectsContext = createContext();
@@ -45,11 +51,10 @@ export const ProjectsAdmin = () => {
   return (
     <ProjectsContext.Provider value={projectsValues}>
       {deleteWindow ? <DeleteWindow Context={ProjectsContext} /> : null}
-      {createWindow ? (
-        <CreateProjectWindow Context={ProjectsContext} />
-      ) : null}
+      {createWindow ? <CreateProjectWindow Context={ProjectsContext} /> : null}
 
       {editWindow ? <EditProjectWindow Context={ProjectsContext} /> : null}
+      {tagsWindow ? <TagsWindow Context={ProjectsContext} /> : null}
 
       <div className="projects-admin">
         <Navbar />

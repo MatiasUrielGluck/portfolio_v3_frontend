@@ -16,6 +16,7 @@ export const Project = ({
     setEditWindow,
     setToEditProjectId,
     setProjectInfo,
+    setTagsWindow,
   } = useContext(Context);
 
   const onEdit = () => {
@@ -29,6 +30,14 @@ export const Project = ({
       codeLink,
     });
     setEditWindow(true);
+  };
+
+  const onTags = () => {
+    setProjectInfo({
+      id,
+      Tags,
+    });
+    setTagsWindow(true);
   };
 
   const onDelete = () => {
@@ -67,6 +76,7 @@ export const Project = ({
       </div>
       <div className="right-container">
         <i className="fa-solid fa-pencil btn action-btn" onClick={onEdit}></i>
+        <i className="fa-solid fa-tag btn action-btn" onClick={onTags}></i>
         <i className="fa-solid fa-trash btn action-btn" onClick={onDelete}></i>
       </div>
     </div>
