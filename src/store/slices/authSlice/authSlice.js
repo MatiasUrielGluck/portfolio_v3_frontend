@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const userTemplate = {
   username: "jose",
-  email: "jose@example.com",
+  token: "abc",
 };
 
 const initialState = {
@@ -24,10 +24,18 @@ export const authSlice = createSlice({
     },
 
     setUser: (state, action) => {
-      state.user += action.payload.user;
+      state.user = action.payload;
+      state.authenticated = true;
+      state.status = "not-checking-auth";
+      localStorage.setItem("token", action.payload.token);
+    },
+
+    logout: (state) => {
+      state = initialState;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { startCheckingAuth, stopCheckingAuth, setUser } = authSlice.actions;
+export const { startCheckingAuth, stopCheckingAuth, setUser, logout } =
+  authSlice.actions;

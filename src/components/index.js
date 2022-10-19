@@ -14,3 +14,4 @@ export * from "./AdminContainer";
 export * from "./SkillsAdmin";
 export * from "./AdminSkillsContainer";
 export * from "./DeleteWindow";
+export * from "./ProjectsAdmin";

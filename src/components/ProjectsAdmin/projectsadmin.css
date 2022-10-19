@@ -1,0 +1,21 @@
+.projects-admin {
+    width: 100%;
+    height: 100vh;
+    padding: 16px;
+}
+
+.projects-admin .projects-subcontainer {
+    margin-top: 64px;
+}
+
+.projects-admin .projects-subcontainer h2 {
+    text-align: center;
+}
+
+.projects-admin .projects-subcontainer h3 {
+    margin-top: 48px;
+}
+
+.projects-admin .preview-image {
+    width: 300px;
+}

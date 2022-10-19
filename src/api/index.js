@@ -1,1 +1,2 @@
-export { default as publicApi } from "./publicApi";
+export * from "./publicApi";
+export * from "./authApi";
