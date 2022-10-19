@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebar } from "../../store/slices/uiSlice";
@@ -8,9 +8,15 @@ import "./sidebar.css";
 export const Sidebar = () => {
   const dispatch = useDispatch();
   const { sidebarExpanded } = useSelector((state) => state.ui);
+  const navigate = useNavigate();
 
   const onExpandBtn = () => {
     dispatch(toggleSidebar());
+  };
+
+  const onLoginBtn = () => {
+    onExpandBtn();
+    navigate("/login");
   };
 
   return (
@@ -26,7 +32,7 @@ export const Sidebar = () => {
       <h3>Hobbies</h3>
       <h3>Portfolio</h3>
       <h3>Contact</h3>
-      <h3><NavLink to="/login">Login</NavLink></h3>
+      <h3 onClick={onLoginBtn}>Login</h3>
     </div>
   );
 };

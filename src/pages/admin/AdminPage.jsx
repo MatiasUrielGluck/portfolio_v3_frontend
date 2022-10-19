@@ -5,11 +5,7 @@ import { useAuth } from "../../hooks";
 
 export const AdminPage = () => {
   useAuth();
-
-  const navigate = useNavigate();
-  const { authenticated, status } = useSelector((state) => state.auth);
-
-  console.log(`DEBUG--->${authenticated}`);
+  const { authenticated } = useSelector((state) => state.auth);
 
   return (
     <>
