@@ -95,7 +95,7 @@
 }
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1200px) {
     .projects-admin .project {
         display: flex;
         flex-flow: column nowrap;

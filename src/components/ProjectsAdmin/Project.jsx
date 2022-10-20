@@ -42,6 +42,10 @@ export const Project = ({
 
   const onDelete = () => {
     setToDeleteProjectId(id);
+    setProjectInfo({
+      id,
+      Tags,
+    });
     setDeleteWindow(true);
   };
 
@@ -51,7 +55,7 @@ export const Project = ({
         <p className="project-title">{name}</p>
         <div className="project-tags">
           {Tags.map((tag) => (
-            <span key={tag.id}>#{tag.name}</span>
+            <span key={tag.id} style={{marginRight: 8}}>#{tag.name}</span>
           ))}
         </div>
         <p className="project-subtitle">{description}</p>

@@ -1,6 +1,6 @@
 /* THIS IS TO PREVENT THIS COMPONENT FROM SCROLLING WHEN THIS WINDOW IS RENDERED */
-.skills-admin {
-    overflow: hidden;
+.projects-admin {
+    overflow: scroll;
 }
 /* ------- */
 
@@ -20,8 +20,9 @@
 }
 
 .tags-window .window-container {
-    width: fit-content;
-    height: 250px;
+    max-width: 350px;
+    width: 100%;
+    height: fit-content;
     background: rgb(233, 233, 233);
     border-radius: 16px;
     padding: 16px 36px;
@@ -37,13 +38,40 @@
 
 .tags-window form {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .tags-window form input {
     display: block;
-    width: 100%;
+    width: 70%;
     margin: 18px 0;
     padding: 8px;
+}
+
+.tags-window form .add-btn {
+    cursor: pointer;
+    padding: 0 8px;
+    width: fit-content;
+    height: 40px;
+    color: white;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background: rgb(29, 181, 29);
+}
+
+.tags-window .add-btn:hover {
+    background: rgb(25, 162, 25);
+    border-radius: 0;
+}
+
+.tags-window .tags-container {
+    margin-bottom: 12px;
 }
 
 .tags-window .window-container .actions-container {
@@ -73,6 +101,25 @@
     background: rgb(200, 19, 19);
 }
 
+.tags-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 8px;
+    margin: auto;
+}
+
+.tags-container .static-tag {
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 16px;
+}
+
+.tags-container .static-tag i {
+    margin-left: 6px;
+    cursor: pointer;
+    color: rgb(200, 19, 19);
+}
 
 @keyframes entry {
     0% {

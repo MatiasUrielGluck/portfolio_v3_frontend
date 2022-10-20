@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 import { useProjects } from "../../hooks";
-import { DeleteWindow } from "../DeleteWindow";
 import { Navbar } from "../Navbar";
 import { CreateProjectWindow } from "./CreateProjectWindow/CreateProjectWindow";
+import { DeleteProjectWindow } from "./DeleteProjectWindow";
 import { EditProjectWindow } from "./EditProjectWindow/EditProjectWindow";
 import { Project } from "./Project";
 import "./projectsadmin.css";
@@ -20,7 +20,7 @@ export const ProjectsAdmin = () => {
 
   const [tagsWindow, setTagsWindow] = useState(false);
 
-  const { projectList } = useProjects([deleteWindow, createWindow, editWindow]);
+  const { projectList } = useProjects([deleteWindow, createWindow, editWindow, tagsWindow]);
 
   const projectsValues = {
     setDeleteWindow,
@@ -50,7 +50,7 @@ export const ProjectsAdmin = () => {
 
   return (
     <ProjectsContext.Provider value={projectsValues}>
-      {deleteWindow ? <DeleteWindow Context={ProjectsContext} /> : null}
+      {deleteWindow ? <DeleteProjectWindow Context={ProjectsContext} /> : null}
       {createWindow ? <CreateProjectWindow Context={ProjectsContext} /> : null}
 
       {editWindow ? <EditProjectWindow Context={ProjectsContext} /> : null}
