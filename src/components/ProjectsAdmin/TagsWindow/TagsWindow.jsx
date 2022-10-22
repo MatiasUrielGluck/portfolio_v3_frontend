@@ -17,6 +17,7 @@ export const TagsWindow = ({ Context }) => {
   });
 
   const onCloseWindow = () => {
+    
     setTagsWindow(false);
   };
 
@@ -55,7 +56,17 @@ export const TagsWindow = ({ Context }) => {
       const data = await res.data;
       const updatedTags = await data.data.tags;
 
+      let toAddTags = []
+
       for (const tag of updatedTags) {
+        for (const newTag of newTags) {
+          if (tag.name === newTag.name) {
+            toAddTags.push(tag)
+          }
+        }
+      }
+
+      for (const tag of toAddTags) {
         try {
           await publicApi().post(`/projects/${id}`, {
             tagId: tag.id,
