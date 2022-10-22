@@ -20,8 +20,8 @@ export const useAuth = () => {
 
         const respData = await resp.data;
         const data = await respData.data;
-
-        if (respData.status === "success" && data.data.approved) {
+        
+        if (data.data.approved && respData.status === "success") {
           dispatch(setUser({ username: data.username, token }));
         } else {
           dispatch(logout());

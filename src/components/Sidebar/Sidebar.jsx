@@ -19,19 +19,28 @@ export const Sidebar = () => {
     navigate("/login");
   };
 
+  const onScroll = (view) => {
+    document.getElementById(view).scrollIntoView({
+      behavior: "smooth",
+    });
+    if (window.innerWidth < 1200) {
+      onExpandBtn()
+    }
+  };
+
   return (
     <div className={`sidebar ${sidebarExpanded ? "expanded" : null}`}>
       <i
         className="fa-solid fa-xmark fa-2x hamb-menu"
         onClick={onExpandBtn}
       ></i>
-      <h3>About me</h3>
-      <h3>Skills</h3>
-      <h3>Education</h3>
-      <h3>Experience</h3>
-      <h3>Hobbies</h3>
-      <h3>Portfolio</h3>
-      <h3>Contact</h3>
+      <h3 onClick={() => onScroll("about")}>About me</h3>
+      <h3 onClick={() => onScroll("skills")}>Skills</h3>
+      <h3 onClick={() => onScroll("education")}>Education</h3>
+      <h3 onClick={() => onScroll("experience")}>Experience</h3>
+      <h3 onClick={() => onScroll("hobbies")}>Hobbies</h3>
+      <h3 onClick={() => onScroll("portfolio")}>Portfolio</h3>
+      <h3 onClick={() => onScroll("contact")}>Contact</h3>
       <h3 onClick={onLoginBtn}>Login</h3>
     </div>
   );

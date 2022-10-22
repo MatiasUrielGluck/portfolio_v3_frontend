@@ -7,7 +7,7 @@ export const TagContainer = () => {
   const { projectList, tagList } = useProjects()
 
   return (
-    <div className='tag-container container'>
+    <div className='tag-container container' id="portfolio">
         <h2 className='title'>Projects ({projectList.length})</h2>
 
         <div className="tag-list">

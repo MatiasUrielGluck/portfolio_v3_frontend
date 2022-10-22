@@ -2,7 +2,7 @@ import "./contactcontainer.css";
 
 export const ContactContainer = () => {
   return (
-    <div className="contact-container container">
+    <div className="contact-container container" id="contact">
       <h2 className="title">Contact me</h2>
       <div className="social-container">
         <a href="mailto:matiasugluck@gmail.com" target="_blank">
@@ -21,7 +21,7 @@ export const ContactContainer = () => {
           href="https://www.youtube.com/channel/UCKbXB3qWadl9qUKiBF6i8Gw"
           target="_blank"
         >
-          <i class="fa-brands fa-square-youtube fa-3x"></i>
+          <i className="fa-brands fa-square-youtube fa-3x"></i>
         </a>
         <a href="https://www.instagram.com/matias_uriel_gluck/" target="_blank">
           <i className="fa-brands fa-square-instagram fa-3x"></i>

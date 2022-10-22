@@ -22,7 +22,7 @@ export const Content = () => {
   return (
     <div className={`content ${sidebarExpanded ? "compact" : null}`}>
       <HambMenu />
-      <ProfileContainer />
+      <ProfileContainer/>
       <div className="grid-container">
         <SkillsContainer skillsCategory="Frontend" skillList={frontSkillList} />
         <SkillsContainer skillsCategory="Backend" skillList={backSkillList} />
@@ -32,7 +32,7 @@ export const Content = () => {
       </div>
       <Porfolio projectList={projectList}/>
 
-      <ContactContainer />
+      <ContactContainer/>
     </div>
   );
 };

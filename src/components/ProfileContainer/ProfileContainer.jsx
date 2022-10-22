@@ -2,7 +2,7 @@ import "./profilecontainer.css";
 
 export const ProfileContainer = () => {
   return (
-    <div className="profile-container container">
+    <div className="profile-container container" id="about">
       <div className="image-container">
         <img src="/static/images/perfil.jpg" alt="Matías Uriel Gluck" />
       </div>

@@ -7,7 +7,7 @@ export const EducationContainer = () => {
   const { educationList } = useEducation()
 
   return (
-    <div className="education-container container">
+    <div className="education-container container" id="education">
       <h2 className="title">Education</h2>
       <ul className="fa-ul">
         {educationList.map((educationItem) => (

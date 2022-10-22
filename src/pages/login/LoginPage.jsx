@@ -32,6 +32,11 @@ export const LoginPage = () => {
       const raw = await resp.data;
       const user = await raw.data;
 
+      if (!user.approved) {
+        setLoginError(true);
+        return;
+      }
+
       const payload = { user: user.username, token: user.token };
       dispatch(setUser(payload));
 
