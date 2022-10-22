@@ -20,6 +20,8 @@ export const CardContainer = ({ projectList, cardsPerPage }) => {
           name={project.name}
           desc={project.description}
           tagList={project.Tags}
+          demoLink={project.demoLink}
+          codeLink={project.codeLink}
           key={project.id}
         />
       ))}
