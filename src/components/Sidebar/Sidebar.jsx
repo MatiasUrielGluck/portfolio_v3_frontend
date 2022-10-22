@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebar } from "../../store/slices/uiSlice";
 
 import "./sidebar.css";
-
+import { useEffect } from "react";
 export const Sidebar = () => {
   const dispatch = useDispatch();
   const { sidebarExpanded } = useSelector((state) => state.ui);
@@ -24,9 +24,10 @@ export const Sidebar = () => {
       behavior: "smooth",
     });
     if (window.innerWidth < 1200) {
-      onExpandBtn()
+      onExpandBtn();
     }
   };
+  
 
   return (
     <div className={`sidebar ${sidebarExpanded ? "expanded" : null}`}>
@@ -41,6 +42,7 @@ export const Sidebar = () => {
       <h3 onClick={() => onScroll("hobbies")}>Hobbies</h3>
       <h3 onClick={() => onScroll("portfolio")}>Portfolio</h3>
       <h3 onClick={() => onScroll("contact")}>Contact</h3>
+      <h3><a href={`${import.meta.env.VITE_DOWNLOADS_BASE_URL}/CV.pdf`}>Download CV</a></h3>
       <h3 onClick={onLoginBtn}>Login</h3>
     </div>
   );

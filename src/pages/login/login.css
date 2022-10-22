@@ -19,6 +19,16 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    animation: loginEntry 0.7s ease;
+}
+
+@keyframes loginEntry {
+    0% {
+        transform: scale(0%);
+    }
+    100% {
+        transform: scale(100%);
+    }
 }
 
 .login-container .login-subcontainer h2 {
