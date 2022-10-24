@@ -4,7 +4,7 @@ import { EducationItem } from "./EducationItem";
 import { useEducation } from "../../hooks";
 
 export const EducationContainer = () => {
-  const { educationList } = useEducation()
+  const { educationList } = useEducation([])
 
   return (
     <div className="education-container container" id="education">

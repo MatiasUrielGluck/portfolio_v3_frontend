@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useProjects } from "../../hooks";
 import { TagContainer, CardContainer, PageContainer } from "./";
 import { setProjectList } from "../../store/slices/projectListSlice";
 import {

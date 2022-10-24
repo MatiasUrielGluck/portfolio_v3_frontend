@@ -4,7 +4,7 @@ import { Tag } from './Tag'
 import { useProjects } from '../../../hooks'
 
 export const TagContainer = () => {
-  const { projectList, tagList } = useProjects()
+  const { projectList, tagList } = useProjects([])
 
   return (
     <div className='tag-container container' id="portfolio">

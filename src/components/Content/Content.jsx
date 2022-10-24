@@ -16,8 +16,8 @@ import { useProjects, useSkills } from "../../hooks";
 
 export const Content = () => {
   const { sidebarExpanded } = useSelector((state) => state.ui);
-  const { frontSkillList, backSkillList } = useSkills();
-  const { projectList } = useProjects();
+  const { frontSkillList, backSkillList } = useSkills([]);
+  const { projectList } = useProjects([]);
 
   return (
     <div className={`content ${sidebarExpanded ? "compact" : null}`}>
