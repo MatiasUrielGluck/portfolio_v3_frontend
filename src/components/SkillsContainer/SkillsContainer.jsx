@@ -9,6 +9,7 @@ export const SkillsContainer = ({ skillsCategory, skillList }) => {
         {skillList.map(skill => (
             <Skill skillName={skill.name} skillIcon={skill.icon} key={skill.name}/>
         ))}
+        { !skillList.length ? 'Loading...' : null }
       </div>
     </div>
   );

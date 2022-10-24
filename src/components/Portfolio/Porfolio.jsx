@@ -9,7 +9,7 @@ import {
 } from "../../helpers";
 import "./portfolio.css";
 
-export const Porfolio = ({projectList = []}) => {
+export const Porfolio = ({ projectList = [] }) => {
   const dispatch = useDispatch();
 
   const [page, setPage] = useState(1);
@@ -42,6 +42,9 @@ export const Porfolio = ({projectList = []}) => {
   return (
     <div className="portfolio">
       <TagContainer />
+      {!projectList.length ? (
+        <p style={{ marginTop: 20, textAlign: "center" }}>Loading...</p>
+      ) : null}
       <CardContainer
         projectList={renderedProjectList}
         cardsPerPage={cardsPerPage}

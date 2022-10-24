@@ -87,7 +87,7 @@
 }
 
 
-@media only screen and (max-height: 500px) {
+@media only screen and (max-height: 550px) {
     .sidebar {
         display: grid;
         grid-template-columns: 1fr 1fr;
