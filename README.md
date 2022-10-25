@@ -27,7 +27,7 @@ ___
 ```
 # Basic
 PORT=3000
-JWT_SECRET_SEED=*8g3^FmjX0i8QZz$3byiQiWIhLr2mRex4UsBl9ZDyHw!geH$PR
+JWT_SECRET_SEED=your_secret_string
 FRONTEND_ORIGIN=http://localhost:5173
 
 # CLOUDINARY
