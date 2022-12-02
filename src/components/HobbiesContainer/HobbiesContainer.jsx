@@ -1,4 +1,6 @@
 import "./hobbiescontainer.css";
+import pianoImage from "../../assets/piano.png";
+import runningImage from "../../assets/running.jpg";
 
 export const HobbiesContainer = () => {
   return (
@@ -7,7 +9,7 @@ export const HobbiesContainer = () => {
 
       <div className="hobby-item">
         <div className="image-container">
-          <img src="/static/images/piano.png" alt="Matías Uriel Gluck Piano" />
+          <img src={pianoImage} alt="Matías Uriel Gluck Piano" />
         </div>
         <p>Piano</p>
         <p>
@@ -23,10 +25,7 @@ export const HobbiesContainer = () => {
 
       <div className="hobby-item">
         <div className="image-container">
-          <img
-            src="/static/images/running.jpg"
-            alt="Matías Uriel Gluck running"
-          />
+          <img src={runningImage} alt="Matías Uriel Gluck running" />
         </div>
         <p>Running</p>
         <p>

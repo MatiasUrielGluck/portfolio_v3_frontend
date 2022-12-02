@@ -1,10 +1,11 @@
 import "./profilecontainer.css";
+import profileImage from '../../assets/perfil.jpg'
 
 export const ProfileContainer = () => {
   return (
     <div className="profile-container container" id="about">
       <div className="image-container">
-        <img src="/static/images/perfil.jpg" alt="Matías Uriel Gluck" />
+        <img src={profileImage} alt="Matías Uriel Gluck" />
       </div>
       <div className="text-container">
         <div className="info-container">
