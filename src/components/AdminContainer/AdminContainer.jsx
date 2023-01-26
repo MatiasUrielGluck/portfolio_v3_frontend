@@ -22,6 +22,10 @@ export const AdminContainer = () => {
         <h2>Projects</h2>
         <i className="fa-solid fa-diagram-project fa-2x"></i>
       </div>
+      <div className="panel" onClick={() => onPanelClick("/admin/order")}>
+        <h2>Projects Order</h2>
+        <i className="fa-solid fa-sort fa-2x"></i>
+      </div>
     </div>
   );
 };

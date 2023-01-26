@@ -1,0 +1,46 @@
+.order-content {
+    margin-top: 64px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.order-content h2 {
+    text-align: center;
+}
+
+.order-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 46px;
+    gap: 14px;
+}
+
+.order-element input {
+    text-align: center;
+}
+
+.order-content button {
+    margin: 24px auto;
+    cursor: pointer;
+    padding: 0 16px;
+    width: 100px;
+    height: 45px;
+    border: none;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(29, 181, 29);
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.order-content button:hover {
+    border-radius: 0;
+}

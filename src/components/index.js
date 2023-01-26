@@ -16,3 +16,5 @@ export * from "./AdminSkillsContainer";
 export * from "./DeleteWindow";
 export * from "./ProjectsAdmin";
 export * from "./EducationAdmin";
+export * from "./Order";
+export * from "./OrderElement";
