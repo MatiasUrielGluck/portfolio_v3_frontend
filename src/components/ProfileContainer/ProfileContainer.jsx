@@ -17,11 +17,9 @@ export const ProfileContainer = () => {
         </div>
         <div className="desc-container">
           <p>
-            I am a software engenieering student with an entrepreneurial spirit.
+            I am a software engenieering student and Fullstack Developer with an entrepreneurial spirit.
             Organized, responsible and well predisposed for teamwork. I took
-            courses and projects in the area of web development. I am looking
-            for my first job in the field, excited to gain experience and
-            further knowledge.
+            courses and projects in the area of web development.
           </p>
         </div>
       </div>

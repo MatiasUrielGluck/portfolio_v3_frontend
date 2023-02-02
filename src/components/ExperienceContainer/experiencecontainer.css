@@ -1,3 +1,29 @@
+.experience-item {
+    margin: 48px auto;
+    padding-bottom: 48px;
+    border-bottom: 1px solid gray;
+}
+
+.experience-item:last-of-type {
+    border-bottom: none;
+}
+
+.experience-item.grid-template {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 48px;
+}
+
+.experience-item.grid-template .right {
+    width: 60%;
+    margin: auto;
+}
+
+.experience-item.grid-template img {
+    width: 100%;
+}
+
 .experience-container h2 {
     font-weight: 500;
     margin-bottom: 24px;
